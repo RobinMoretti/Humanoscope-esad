@@ -1,24 +1,33 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+document.addEventListener("DOMContentLoaded", function () {
+  const listItems = document.querySelectorAll("li");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  listItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const openItems = document.querySelectorAll(".clicked");
+      const alreadyClicked = this.classList.contains("clicked");
 
-setupCounter(document.querySelector('#counter'))
+      listItems.forEach((li) => {
+        li.classList.remove("clicked");
+      });
+
+      if (!alreadyClicked && openItems.length === 0) {
+        this.classList.add("clicked");
+      } else if (!alreadyClicked) {
+        this.addEventListener(
+          "transitionend",
+          () => {
+            this.classList.add("clicked");
+          },
+          { once: true }
+        );
+      }
+    });
+  });
+
+  document.querySelectorAll(".close-btn").forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.stopPropagation();
+      this.parentElement.classList.remove("clicked");
+    });
+  });
+});

@@ -1,13 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/bug.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanoscope</title>
+  <link rel="icon" href="bug.ico" />
+  <link rel="stylesheet" type="text/css" href="/src/style.css" />
+</head>
+
+<body>
+  <header>
+    <ul>
+      <li id="historique"><span>Historique</span><button class="close-btn">X</button></button><div class="tableau"></div></li>
+      <li id="fantastique"><span>fantastique</span><button class="close-btn">X</button></button><div class="tableau"></div></li>
+      <li id="temp1"><span>temp1</span><button class="close-btn">X</button><div class="tableau"></div></li>
+      <li id="temp2"><span>temp2</span><button class="close-btn">X</button><div class="tableau"></div></li>
+    </ul>
+  </header>
+  <div class="dropzone"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

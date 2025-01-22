@@ -9,17 +9,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media (prefers-color-scheme: light) {
-  :root {
+
+  @media (prefers-color-scheme: light) {
     color: #213547;
     background-color: #ffffff;
-  }
-  :root a:hover {
-    color: #747bff;
-  }
-  :root button {
-    background-color: #f9f9f9;
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
   }
 }
 
@@ -27,9 +26,10 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+  &:hover {
+    color: #535bf2;
+  }
 }
 
 body {
@@ -58,12 +58,14 @@ h1 {
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em rgba(247, 223, 30, 0.6666666667));
+
+  &:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  &.vanilla:hover {
+    filter: drop-shadow(0 0 2em #f7df1eaa);
+  }
 }
 
 .card {
@@ -83,9 +85,16 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  color: white;
+
+  &:hover {
+    color: white;
+    // border-color: #646cff;
+  }
+
+  //   &:focus,
+  //   &:focus-visible {
+  //     outline: 4px auto -webkit-focus-ring-color;
+  //   }
 }
 
 header {
@@ -115,15 +124,15 @@ li {
   transform: translateY(0);
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s ease;
   transform-origin: center;
-}
-li:not(.clicked) {
-  transform: scale(1);
-}
-li:not(.clicked):hover {
-  width: 12vw;
-  height: 25vh;
-  top: -5vh;
-  transform: translateY(-5vh);
+  &:not(.clicked) {
+    transform: scale(1);
+    &:hover {
+      width: 12vw;
+      height: 25vh;
+      top: -5vh;
+      transform: translateY(-5vh);
+    }
+  }
 }
 
 .clicked {
@@ -133,9 +142,9 @@ li:not(.clicked):hover {
   transform: translate(-50%, -50%) scale(3);
   cursor: default;
   z-index: 999;
-}
-.clicked .close-btn, .clicked .tableau {
-  visibility: visible;
+  .close-btn, .tableau {
+    visibility: visible;
+  }
 }
 
 .close-btn {
@@ -158,9 +167,9 @@ li:not(.clicked):hover {
 }
 
 .tableau {
-  position: relative;
-  width: 10vw;
-  height: 10vh;
-  background-color: white;
-  visibility: hidden;
-}/*# sourceMappingURL=style.css.map */
+    position: relative;
+    width: 10vw;
+    height: 10vh;
+    background-color: white;
+    visibility: hidden;
+}
