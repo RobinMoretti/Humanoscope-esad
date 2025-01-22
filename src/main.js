@@ -2,15 +2,23 @@ import './style.css'
 
 import { LMStudioClient } from "@lmstudio/sdk";
 
-const client = new LMStudioClient();
+const client = new LMStudioClient({
+    baseUrl: "ws://192.168.33.81:1234",
+});
 
-// Load a model
-const llama3 = await client.llm.load("lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF");
+const downloadedModels = await client.system.listDownloadedModels();
 
-// Create a text completion prediction
-const prediction = llama3.complete("The meaning of life is");
+let llamaModelPath = downloadedModels[0].path;
+const llama3 = await client.llm.get({ path: llamaModelPath});
+console.log(llama3)
 
-// Stream the response
+const prediction = llama3.respond([
+    { role: "system", content: "Answer the following questions shortly." },
+    { role: "user", content: "What is the capital of france" },
+]);
+
+let messageElement = document.getElementById("message");
+
 for await (const { content } of prediction) {
-    process.stdout.write(content);
+    messageElement.innerText += content;
 }
