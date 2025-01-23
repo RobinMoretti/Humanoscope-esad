@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests ASCII</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <pre id="collectionHistorique" onclick="collectionOpener()">
+`____________________'
+ \_______Historique_______/ 
+|                      |
+|                      |
+,-----------------------,
+    </pre>
+
+    <pre id="collectionFantastique" onclick="collectionOpener()">
+(\_________.o.__________/)
+(_______Fantastique_______) 
+{                        }
+|                        |
+\-----------------------/
+    </pre>
+
+    <pre id="collectionTemporel" onclick="collectionOpener()">
+_-___________________-_
+i ______Temporelle______i
+!                       !
+!                       !
+o----------------------o
+    </pre>
+
+    <pre id="collectionScientifique" onclick="collectionOpener()">
+i|_________'+`_________|i
+____Scientifique____ 
+|                   |
+|                       |
+\----------------------/
+    </pre>
+
+    <pre id="collectionCadre" style="display:none;">
+        _____
+         ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
+         #=================================================================#
+         +                                                              <button id="close_button" style="background-color: white; border: none; width: fit-content;" onclick="collectionOpener()">X</button> +
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         *                                                                 *
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         *                                                                 *
+         ⎢                                                                 ⎢
+         ⎢                                                                 ⎢
+         +                                                                 +
+         #=================================================================#
+         ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
+        -------- 
+    </pre>
+
+    <div class="texteHistorique" id="texteHistorique" style="display:none;">
+        <button id="close_button" style="background-color: white; border: none; width: fit-content;" onclick="infoOpener()">X</button>
+        <h1>Carnet d'observation</h1>
+        <div>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : What the fuck !</p>
+            <p><span class="name">La Reine des Neiges</span> : I don't care what they're going to say</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+            <p><span class="name">La Reine des Neiges</span> : The cold never bothered me anyway.</p>
+            <p class="relationBaisse"><span class="name">Homme préhistorique</span> → La Reine des Neiges ⬇︎</p>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : What the fuck !</p>
+            <p><span class="name">La Reine des Neiges</span> : I don't care what they're going to say</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+            <p><span class="name">La Reine des Neiges</span> : The cold never bothered me anyway.</p>
+            <p class="relationBaisse"><span class="name">Homme préhistorique</span> → La Reine des Neiges ⬇︎</p>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+        </div>
+
+    </div>
+
+    <pre id="historique_ouvert" style="display:none;">
+                        o
+                       / \
+{===============================================}
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+{===============================================}
+    </pre>
+
+    <pre id="historique_fermé" id="info_button" onclick="infoOpener()">
+{====][ I ][====}
+{===============}
+    </pre>
+
+
+    <pre id="fondHaut">
++-----------------------------------------------------------------------------<===================>------------------------------------------------------------------------------+
+|          /------------.........................                                    +-----+                                      .........................------------\         |
+|    /-----                                                                                                                                                             -----\   |
+*---									                                                                                                      ---*
+    </pre>
+
+    <pre id="fondBas">
+*                                                                                                                                                                             *
+|                                                                                                                                                                             |
+|                                                                                                                                                                             |
+|                                                                                                                                                                             |
++-----------------------                                                                                                                               -----------------------+
+    </pre>
+
+    <script src="asciiInteraction.js"></script>
+</body>
+</html>

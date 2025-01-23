@@ -1,0 +1,161 @@
+@font-face{
+    src: url(jgs_Font.ttf);
+    font-family: "jgs";
+}
+
+* {
+    font-family: "jgs";
+    font-size: 16px;
+}
+
+.collectionSpecimens{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+:root{
+    --leftCadre : 235px;
+}
+
+
+#collectionCadre {
+  position: fixed;
+  top: 25px;
+  left: calc(50% - 340px);
+  text-align: center;
+  visibility: visible;
+  background-color: white;
+}
+
+#fondHaut{
+    position: fixed;
+    top : 0;
+    visibility: visible;
+    text-align: center;
+    z-index: 0;
+}
+
+#fondBas{
+    position: fixed;
+    bottom : -30px;
+    visibility: visible;
+    text-align: center;
+    z-index: 0;
+}
+
+
+
+/************************* COLLECTIONS *******************************/
+
+#collectionHistorique{
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    bottom: -85px;
+    left: var(--leftCadre);
+}
+#collectionHistorique:hover {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+
+#collectionFantastique{
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    bottom: -85px;
+    left: calc(var(--leftCadre) + 250px);
+}
+#collectionFantastique:hover {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+
+#collectionTemporel{
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    bottom: -85px;
+    left: calc(var(--leftCadre) + 500px);
+}
+#collectionTemporel:hover {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+
+#collectionScientifique{
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    bottom: -85px;
+    left: calc(var(--leftCadre) + 750px);
+}
+#collectionScientifique:hover {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+
+
+/***************************** CARNET D'OBSERVATION *******************************/
+.name{
+    font-weight: bold;
+}
+
+.relationAugmente{
+    color: green;
+    font-style: italic;
+}
+
+.relationBaisse{
+    color: brown;
+    font-style: italic;
+}
+
+.texteHistorique {
+    position: fixed;
+    top: 152px;
+    right: 70px;
+    width: 325px;
+    height : 200px;
+
+    visibility: visible;
+    z-index: 3;
+}
+.texteHistorique p, .name, .relationAugmente, .relationBaisse{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+}
+.texteHistorique h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+#historique_ouvert{
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    visibility: visible;
+    background-color: white;
+    z-index: 2;
+}
+
+#historique_fermé{
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    visibility: visible;
+    background-color: white;
+    z-index: 1;
+}
+
+#close_button{
+    position: fixed;
+    top: 125px;
+    right: 45px;
+}
