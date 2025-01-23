@@ -14,7 +14,7 @@
 
 
 :root{
-    --leftCadre : 200px;
+    --leftCadre : 235px;
 }
 
 
@@ -25,24 +25,6 @@
   text-align: center;
   visibility: visible;
   background-color: white;
-}
-
-#historique_ouvert{
-    position: fixed;
-    top: 100px;
-    right: 30px;
-    visibility: visible;
-    background-color: white;
-    z-index: 2;
-}
-
-#historique_fermé{
-    position: fixed;
-    bottom: 50px;
-    right: 130px;
-    visibility: visible;
-    background-color: white;
-    z-index: 1;
 }
 
 #fondHaut{
@@ -151,4 +133,29 @@
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     padding-bottom: 10px;
+}
+
+
+#historique_ouvert{
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    visibility: visible;
+    background-color: white;
+    z-index: 2;
+}
+
+#historique_fermé{
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    visibility: visible;
+    background-color: white;
+    z-index: 1;
+}
+
+#close_button{
+    position: fixed;
+    top: 125px;
+    right: 45px;
 }
