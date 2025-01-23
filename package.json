@@ -9,6 +9,34 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^6.0.5"
-  }
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@interactjs/types": "^1.10.27",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "interactjs": "^1.10.27",
+    "style-loader": "^4.0.0",
+    "vite": "^6.0.5",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "@interactjs/interactjs": "^1.10.27",
+    "express": "^4.21.2"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinMoretti/Humanoscope-esad.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinMoretti/Humanoscope-esad/issues"
+  },
+  "homepage": "https://github.com/RobinMoretti/Humanoscope-esad#readme",
+  "description": ""
 }

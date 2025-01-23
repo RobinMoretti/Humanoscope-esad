@@ -1,18 +1,31 @@
+import "./style.css";
+import interact from "interactjs";
+import { dragMoveListener } from "./draggable.js";
+
+console.log(interact);
+
+interact(".draggable").draggable({
+  listeners: {
+    move(event) {
+      dragMoveListener(event);
+    },
+  },
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const listItems = document.querySelectorAll("li");
 
   listItems.forEach((item) => {
     item.addEventListener("click", function () {
+      if (this.classList.contains("clicked")) {
+        return;
+      }
+
       const openItems = document.querySelectorAll(".clicked");
-      const alreadyClicked = this.classList.contains("clicked");
-
-      listItems.forEach((li) => {
-        li.classList.remove("clicked");
-      });
-
-      if (!alreadyClicked && openItems.length === 0) {
-        this.classList.add("clicked");
-      } else if (!alreadyClicked) {
+      if (openItems.length > 0) {
+        openItems.forEach((openItem) => {
+          openItem.classList.remove("clicked");
+        });
         this.addEventListener(
           "transitionend",
           () => {
@@ -20,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           { once: true }
         );
+      } else {
+        this.classList.add("clicked");
       }
     });
   });

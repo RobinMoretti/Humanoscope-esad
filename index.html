@@ -8,19 +8,32 @@
   <title>Humanoscope</title>
   <link rel="icon" href="bug.ico" />
   <link rel="stylesheet" type="text/css" href="/src/style.css" />
+  <script type="module" src="/src/draggable.js"></script>
 </head>
 
 <body>
   <header>
     <ul>
-      <li id="historique"><span>Historique</span><button class="close-btn">X</button></button><div class="tableau"></div></li>
-      <li id="fantastique"><span>fantastique</span><button class="close-btn">X</button></button><div class="tableau"></div></li>
-      <li id="temp1"><span>temp1</span><button class="close-btn">X</button><div class="tableau"></div></li>
-      <li id="temp2"><span>temp2</span><button class="close-btn">X</button><div class="tableau"></div></li>
+      <li id="historique"><span>Historique</span><button class="close-btn">X</button></button>
+        <div class="tableau">
+          <div class="draggable"><span class="nom">Donald Trump</span></div>
+        </div>
+      </li>
+      <li id="fantastique"><span>fantastique</span><button class="close-btn">X</button></button>
+        <div class="tableau"></div>
+      </li>
+      <li id="temp1"><span>temp1</span><button class="close-btn">X</button>
+        <div class="tableau">
+        </div>
+      </li>
+      <li id="temp2"><span>temp2</span><button class="close-btn">X</button>
+        <div class="tableau"></div>
+      </li>
     </ul>
   </header>
   <div class="dropzone"></div>
   <script type="module" src="/src/main.js"></script>
+
 </body>
 
 </html>

@@ -130,11 +130,12 @@ li:not(.clicked):hover {
   position: fixed;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(3);
+  transform: translate(-50%, -50%) scale(3.5);
   cursor: default;
   z-index: 999;
 }
-.clicked .close-btn, .clicked .tableau {
+.clicked .close-btn,
+.clicked .tableau {
   visibility: visible;
 }
 
@@ -146,6 +147,9 @@ li:not(.clicked):hover {
   font-weight: bold;
   cursor: pointer;
   visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .dropzone {
@@ -163,4 +167,10 @@ li:not(.clicked):hover {
   height: 10vh;
   background-color: white;
   visibility: hidden;
+}
+
+.nom {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }/*# sourceMappingURL=style.css.map */

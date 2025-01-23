@@ -139,10 +139,11 @@ li {
   position: fixed;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(3);
+  transform: translate(-50%, -50%) scale(3.5);
   cursor: default;
   z-index: 999;
-  .close-btn, .tableau {
+  .close-btn,
+  .tableau {
     visibility: visible;
   }
 }
@@ -155,6 +156,7 @@ li {
   font-weight: bold;
   cursor: pointer;
   visibility: hidden;
+  user-select: none;
 }
 
 .dropzone {
@@ -167,9 +169,13 @@ li {
 }
 
 .tableau {
-    position: relative;
-    width: 10vw;
-    height: 10vh;
-    background-color: white;
-    visibility: hidden;
+  position: relative;
+  width: 10vw;
+  height: 10vh;
+  background-color: white;
+  visibility: hidden;
+}
+
+.nom {
+  user-select: none;
 }
