@@ -2,7 +2,7 @@ let answerDiv = document.getElementById('answer');
 
 import { LMStudioClient } from "@lmstudio/sdk";
 
-let lmstudio;
+let lmStudio;
 let client;
 
 const schema = {
@@ -25,23 +25,25 @@ const schema = {
 };
 
 export async function initLmStudio() {
-    lmstudio = new LMStudioClient({
-        baseUrl: "ws://192.168.33.81:1234",
+    console.log("initLmStudio is initiating.")
+
+    lmStudio = new LMStudioClient({
+        baseUrl: "wss://169.254.165.204:1234",
     });
 
-    const loadedModels = await lmstudio.llm.listLoaded();
+    const loadedModels = await lmStudio.llm.listLoaded();
 
+    console.log("initLmStudio is initiating2.")
     if (loadedModels.length === 0) {
         throw new Error("No models loaded");
     }
 
-    client = await lmstudio.llm.get({ identifier: loadedModels[0].identifier });
+    client = await lmStudio.llm.get({ identifier: loadedModels[0].identifier });
+    console.log("initLmStudio iniated.")
 }
 
 /// Create a text completion prediction
 export async function predict(history){
-    console.log(history);
-
     // Create a text completion prediction
     const prediction =  await client.respond(
         history,
@@ -57,5 +59,8 @@ export async function predict(history){
     );
 
     return (JSON.parse(prediction.content));
-
 }
+
+
+export let initialPrompt = "" +
+    "Tu dois incarner un personage. Ne sors jamais de ce personnage."

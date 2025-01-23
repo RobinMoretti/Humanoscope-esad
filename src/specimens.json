@@ -1,0 +1,8 @@
+{
+  "specimens": [
+    {
+        "name": "Donald Trump",
+        "path": "src/Specimens/Trump.txt"
+    }
+  ]
+}
