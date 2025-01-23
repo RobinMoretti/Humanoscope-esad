@@ -99,28 +99,6 @@ header {
   z-index: 10;
 }
 
-#message{
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-}
-#answer{
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  max-width: 600px;
-}
-
-
-.messages-container{
-  max-width: 200px;
-}
-
-#collection-container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    overflow: visible;
-    height: 200px;
-}
 ul {
   padding-inline-start: 0;
   display: flex;
@@ -138,8 +116,6 @@ li {
   transform: translateY(0);
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s ease;
   transform-origin: center;
-
-  bottom: 10rem;
 }
 li:not(.clicked) {
   transform: scale(1);
@@ -197,7 +173,6 @@ li:not(.clicked):hover {
   height: 10vh;
   background-color: white;
   visibility: hidden;
-
 }
 
 .nom {
@@ -206,4 +181,45 @@ li:not(.clicked):hover {
      -moz-user-select: none;
           user-select: none;
   font-size: 0.9rem;
+}
+
+#fondHaut-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+}
+
+#fondHaut {
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+#fondBas-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#fondBas {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: pre;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
 }/*# sourceMappingURL=style.css.map */
