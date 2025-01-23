@@ -1,6 +1,6 @@
 function infoOpener() {
     var ouvert = document.getElementById("historique_ouvert");
-    var fermé = document.getElementById("historique_fermé");
+    var fermé = document.getElementById("historique-ferme");
     var texte = document.getElementById("texteHistorique");
 
     if (ouvert.style.display === "none" || ouvert.style.display === "") {
