@@ -104,3 +104,16 @@ button:focus-visible {
   font-size: 1.5rem;
   max-width: 600px;
 }
+
+
+.messages-container{
+  max-width: 200px;
+}
+
+#collection-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    overflow: visible;
+    height: 200px;
+}
