@@ -18,7 +18,7 @@ const schema = {
                 },
                 parameters: { type: "object" },
             },
-            required: ["actions", "parameters"],
+            //required: ["actions", "parameters"],
         },
     },
     required: ["message", "actions"],
@@ -28,7 +28,7 @@ export async function initLmStudio() {
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({
-        baseUrl: "wss://169.254.165.204:1234",
+        baseUrl: "ws://192.168.32.180:5678",
     });
 
     const loadedModels = await lmStudio.llm.listLoaded();
@@ -50,10 +50,10 @@ export async function predict(history){
         {
             //contextOverflowPolicy: "stopAtLimit",
             //maxPredictedTokens: 100,
-            stopStrings: ["\n"],
+            //stopStrings: ["</span>"],
             temperature: 0.7,
-            //inputPrefix: "Q: ",
-            //inputSuffix: "\nA:",
+            inputPrefix: "<span>",
+            inputSuffix: "</span>",
             structured: { type: "json", jsonSchema: schema },
         },
     );
@@ -63,4 +63,9 @@ export async function predict(history){
 
 
 export let initialPrompt = "" +
-    "Tu dois incarner un personage. Ne sors jamais de ce personnage."
+    "Tu dois incarner un personage. Ne sors jamais de ce personnage. Exprime toi toujours avec de courtes phrases, comme des exclamations. " +
+    "essaie de ne pas trop te répéter" +
+    "Tu peux utiliser la direction pour te diriger sans l'espace si tu le souhaite." +
+    "Si je t'envoyer un message avec avec le nom de quelqu'un, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
+    "roi artur : je suis le roi de la table ronde." +
+    "/n"

@@ -6,6 +6,8 @@ import {Specimen} from "./specimen.js";
 
 let specimens = [];
 
+let observatory = []
+
 initGame();
 
 async function initGame(){
@@ -20,8 +22,13 @@ async function loadAllSpecimens(){
         specimens[specimen.name] = newSpecimen;
         specimens[specimen.name].initialPrompt = await loadLocalTextFile("public/Specimens/Trump.txt");
         specimens[specimen.name].init();
-        console.log(specimens[specimen.name].chatHistory);
     }
+
+    specimens["Donald Trump"].startTalking();
 }
 
+
+document.getElementById("test-interaction").addEventListener("click",()=>{
+    specimens["Donald Trump"].hearSomeoneElse("You missed me donald.","Nancy Pelosi");
+})
 
