@@ -9,17 +9,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media (prefers-color-scheme: light) {
-  :root {
+
+  @media (prefers-color-scheme: light) {
     color: #213547;
     background-color: #ffffff;
-  }
-  :root a:hover {
-    color: #747bff;
-  }
-  :root button {
-    background-color: #f9f9f9;
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
   }
 }
 
@@ -27,9 +26,10 @@ a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+  &:hover {
+    color: #535bf2;
+  }
 }
 
 body {
@@ -58,12 +58,14 @@ h1 {
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em rgba(247, 223, 30, 0.6666666667));
+
+  &:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  &.vanilla:hover {
+    filter: drop-shadow(0 0 2em #f7df1eaa);
+  }
 }
 
 .card {
@@ -83,9 +85,10 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  color: white;
+
+  &:hover {
+    color: white;
+  }
 }
 
 header {
@@ -99,28 +102,6 @@ header {
   z-index: 10;
 }
 
-#message{
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-}
-#answer{
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  max-width: 600px;
-}
-
-
-.messages-container{
-  max-width: 200px;
-}
-
-#collection-container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    overflow: visible;
-    height: 200px;
-}
 ul {
   padding-inline-start: 0;
   display: flex;
@@ -138,15 +119,15 @@ li {
   transform: translateY(0);
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s ease;
   transform-origin: center;
-}
-li:not(.clicked) {
-  transform: scale(1);
-}
-li:not(.clicked):hover {
-  width: 12vw;
-  height: 25vh;
-  top: -5vh;
-  transform: translateY(-5vh);
+  &:not(.clicked) {
+    transform: scale(1);
+    &:hover {
+      width: 12vw;
+      height: 25vh;
+      top: -5vh;
+      transform: translateY(-5vh);
+    }
+  }
 }
 
 .clicked {
@@ -157,10 +138,10 @@ li:not(.clicked):hover {
   cursor: default;
   pointer-events: auto;
   z-index: 99;
-}
-.clicked .close-btn,
-.clicked .tableau {
-  visibility: visible;
+  .close-btn,
+  .tableau {
+    visibility: visible;
+  }
 }
 
 .close-btn {
@@ -171,9 +152,7 @@ li:not(.clicked):hover {
   font-weight: bold;
   cursor: pointer;
   visibility: hidden;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .dropzone {
@@ -199,8 +178,6 @@ li:not(.clicked):hover {
 
 .nom {
   color: black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 0.9rem;
-}/*# sourceMappingURL=style.css.map */
+}
