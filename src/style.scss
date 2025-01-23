@@ -88,13 +88,7 @@ button {
 
   &:hover {
     color: white;
-    // border-color: #646cff;
   }
-
-  //   &:focus,
-  //   &:focus-visible {
-  //     outline: 4px auto -webkit-focus-ring-color;
-  //   }
 }
 
 header {
@@ -105,6 +99,7 @@ header {
   height: 20vh;
   bottom: -12vh;
   margin: 0;
+  z-index: 10;
 }
 
 ul {
@@ -141,7 +136,8 @@ li {
   left: 50%;
   transform: translate(-50%, -50%) scale(3.5);
   cursor: default;
-  z-index: 999;
+  pointer-events: auto;
+  z-index: 99;
   .close-btn,
   .tableau {
     visibility: visible;
@@ -160,12 +156,16 @@ li {
 }
 
 .dropzone {
-  z-index: -10;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   top: 0;
   bottom: 0;
-  position: fixed;
+  position: relative;
+}
+
+.draggable {
+  position: absolute;
 }
 
 .tableau {
@@ -177,5 +177,7 @@ li {
 }
 
 .nom {
+  color: black;
   user-select: none;
+  font-size: 0.9rem;
 }

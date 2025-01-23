@@ -4,7 +4,7 @@ import { dragMoveListener } from "./draggable.js";
 
 console.log(interact);
 
-interact(".draggable").draggable({
+interact(".dragDrop").draggable({
   listeners: {
     move(event) {
       dragMoveListener(event);
