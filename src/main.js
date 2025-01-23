@@ -10,19 +10,20 @@ let specimens = [];
 
 let observatory;
 
-let collection = [
-];
+let collection = [];
 
 initGame();
 
-async function initGame(){
+async function initGame() {
+    initHtml();
+
     await initLmStudio();
     await loadAllSpecimens();
     observatory = new Observatory();
 }
 
-async function loadAllSpecimens(){
-    for(let specimen of specimensFiles.specimens){
+async function loadAllSpecimens() {
+    for (let specimen of specimensFiles.specimens) {
         console.log(specimen);
         let newSpecimen = new Specimen(specimen.name, specimen.tableau);
         specimens[specimen.name] = newSpecimen;
@@ -30,10 +31,9 @@ async function loadAllSpecimens(){
         specimens[specimen.name].init();
 
         // add or create a tableau in collection from specimen
-        if(collection.find(tableau => tableau.name === specimen.tableau)){
+        if (collection.find(tableau => tableau.name === specimen.tableau)) {
             collection.find(tableau => tableau.name === specimen.tableau).specimens.push(specimen);
-        }
-        else{
+        } else {
             collection.push(
                 {
                     name: specimen.tableau,
@@ -43,68 +43,65 @@ async function loadAllSpecimens(){
     }
 }
 
-document.getElementById("test-interaction").addEventListener("click",()=>{
+document.getElementById("test-interaction").addEventListener("click", () => {
     moveSpecimenFromTableauToObservatory(specimens["donald-trump"]);
 })
 
-function moveSpecimenFromTableauToObservatory(specimen){
+function moveSpecimenFromTableauToObservatory(specimen) {
     observatory.specimens.push(specimen);
     collection.find(tableau => tableau.name === specimen["tableau"]).specimens.splice(specimen);
     specimen.startTalking();
 }
 
-function moveSpecimenFromObservatoryToTableau(specimen){
+function moveSpecimenFromObservatoryToTableau(specimen) {
     /*collection.push(specimen);
     observatory.find(tableau => tableau.name === specimen.tableau).specimens.splice(specimen);*/
 }
 
-
-interact(".dragDrop").draggable({
-  listeners: {
-    move(event) {
-      dragMoveListener(event);
+/*interact(".dragDrop").draggable({
+    listeners: {
+        move(event) {
+            dragMoveListener(event);
+        },
     },
-  },
-});
+});*/
 
-document.addEventListener("DOMContentLoaded", function () {
-  const listItems = document.querySelectorAll("li");
+function initHtml(){
+    // active clickable items for collection
+    const listItems = document.querySelectorAll("li");
 
-  listItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      if (this.classList.contains("clicked")) {
-        return;
-      }
+    listItems.forEach((item) => {
+        item.addEventListener("click", function () {
+            if (this.classList.contains("clicked")) {
+                return;
+            }
 
-      const openItems = document.querySelectorAll(".clicked");
-      if (openItems.length > 0) {
-        openItems.forEach((openItem) => {
-          openItem.classList.remove("clicked");
+            const openItems = document.querySelectorAll(".clicked");
+
+            if (openItems.length > 0) {
+                openItems.forEach((openItem) => {
+                    openItem.classList.remove("clicked");
+                });
+                this.addEventListener(
+                    "transitionend",
+                    () => {
+                        this.classList.add("clicked");
+                    },
+                    {once: true}
+                );
+            } else {
+                this.classList.add("clicked");
+            }
         });
-        this.addEventListener(
-          "transitionend",
-          () => {
-            this.classList.add("clicked");
-          },
-          { once: true }
-        );
-      } else {
-        this.classList.add("clicked");
-      }
     });
-  });
 
-  document.querySelectorAll(".close-btn").forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-      this.parentElement.classList.remove("clicked");
+    document.querySelectorAll(".close-btn").forEach((button) => {
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+            this.parentElement.classList.remove("clicked");
+        });
     });
-  });
-});
-
-
-
-/* alice ----- */
+}
 
 function infoOpener() {
     var ouvert = document.getElementById("historique_ouvert");

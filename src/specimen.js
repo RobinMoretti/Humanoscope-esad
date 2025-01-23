@@ -1,5 +1,7 @@
 import {initialPrompt, initLmStudio, predict} from "./lmStudio.js";
 import {randomIntFromInterval} from "./helper.js";
+import interact from "interactjs";
+import {dragMoveListener} from "./draggable.js";
 
 export class Specimen {
     constructor(name, tableau) {
@@ -26,8 +28,40 @@ export class Specimen {
                 "Voici ça description :" + this.initialPrompt
         })
 
-        document.getElementById("collection-container").appendChild(this.generateElement());
+        document.getElementById("").appendChild(this.generateElement());
         this.messagesContainer = document.querySelector("#" + this.name + " .messages-container");
+
+        interact("#" + this.name).draggable({
+            inertia: true,
+            //   modifiers: [
+            //     interact.modifiers.restrictRect({
+            //       restriction: document.body,
+            //       elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
+            //       endOnly: true,
+            //     }),
+            //   ],
+            listeners: {
+                start(event) {
+                    const target = event.target;
+                    const rect = target.getBoundingClientRect();
+                    const parentRect = target.parentNode.getBoundingClientRect();
+
+                    const x = rect.left - parentRect.left;
+                    const y = rect.top - parentRect.top;
+                    target.setAttribute("data-x", x);
+                    target.setAttribute("data-y", y);
+                    target.style.zIndex = 999;
+                },
+                move: dragMoveListener,
+                end(event) {
+                    const target = event.target;
+                    const parentZIndex = parseInt(
+                        window.getComputedStyle(event.target.parentNode).zIndex || 0
+                    );
+                    target.style.zIndex = parentZIndex + 1;
+                },
+            },
+        });
         console.log("this.messagesContainer", this.messagesContainer)
     }
 
