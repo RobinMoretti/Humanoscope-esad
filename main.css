@@ -1,0 +1,11 @@
+.collection_specimens{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#historique{
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    visibility: visible;
+}
