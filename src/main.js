@@ -10,10 +10,6 @@ let specimens = [];
 let observatory;
 
 let collection = [
-    {
-        name: "Historical figure",
-        specimens: []
-    }
 ];
 
 
