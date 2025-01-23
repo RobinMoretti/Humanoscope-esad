@@ -4,6 +4,7 @@ import {initLmStudio, predict} from "./lmStudio.js";
 import * as specimensFiles from './specimens.json';
 import {Specimen} from "./specimen.js";
 import {Observatory} from "./Observatory.js";
+import interact from 'interactjs';
 
 let specimens = [];
 

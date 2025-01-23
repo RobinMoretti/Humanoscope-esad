@@ -14,7 +14,7 @@
   "dependencies": {
     "@lmstudio/sdk": "^0.4.5",
     "openai": "^4.80.0",
-    "interactjs": "^1.10.27",
+    "interactjs": "^1.10.27"
   },
   "main": "index.js",
   "repository": {
