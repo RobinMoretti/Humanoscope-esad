@@ -94,3 +94,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#message{
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+#answer{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  max-width: 600px;
+}

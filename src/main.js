@@ -1,24 +1,17 @@
 import './style.css'
 
-import { LMStudioClient } from "@lmstudio/sdk";
+import {initLmStudio, predict} from "./lmStudio.js";
 
-const client = new LMStudioClient({
-    baseUrl: "ws://192.168.33.81:1234",
-});
 
-const downloadedModels = await client.system.listDownloadedModels();
+async function initGame(){
+    await initLmStudio();
+    const messages = [
+        { role: "system", content: "Your are playing a game." },
+        { role: "user", content: "where are you going ? plese turn right" },
+    ];
 
-let llamaModelPath = downloadedModels[0].path;
-const llama3 = await client.llm.get({ path: llamaModelPath});
-console.log(llama3)
-
-const prediction = llama3.respond([
-    { role: "system", content: "Answer the following questions shortly." },
-    { role: "user", content: "What is the capital of france" },
-]);
-
-let messageElement = document.getElementById("message");
-
-for await (const { content } of prediction) {
-    messageElement.innerText += content;
+    let response = await predict(messages);
 }
+
+initGame();
+
