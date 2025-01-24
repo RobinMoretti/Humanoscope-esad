@@ -61,7 +61,6 @@ export class Specimen {
     }
 
     async talk(){
-
         if(!this.isTalking) return;
 
         setTimeout(async ()=>{

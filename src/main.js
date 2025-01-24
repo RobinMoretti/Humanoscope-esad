@@ -97,7 +97,6 @@ function initHtml(){
             //event.stopPropagation();
             for (let item of document.querySelectorAll(".clicked")) {
                 item.setAttribute("class", "tableau-container");
-                console.log(item);
             }
         });
     });
@@ -238,7 +237,6 @@ export function moveElementToNewParent(element, newParent) {
 
     // find the specimen with id
     let specimen = specimens[element.id];
-    console.log()
     specimen.move(newX, newY);
     // Apply the translate transformation to maintain the same visual position
     //element.style.transform = `translate(${newX}px, ${newY}px)`;
