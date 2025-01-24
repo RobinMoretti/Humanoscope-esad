@@ -7,7 +7,7 @@
     },
     {
       "name": "alan-turing",
-      "tableau": "fantastique",
+      "tableau": "historical-figure",
       "path": "src/Specimens/alan-turing.txt"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "name": "poutine",
-      "tableau": "fantastique",
+      "tableau": "historical-figure",
       "path": "src/Specimens/poutine.txt"
     },
     {
       "name": "gandhi",
-      "tableau": "fantastique",
+      "tableau": "historical-figure",
       "path": "src/Specimens/gandhi.txt"
     },
     {

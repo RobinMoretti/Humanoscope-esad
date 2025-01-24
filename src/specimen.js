@@ -36,7 +36,7 @@ export class Specimen {
             content: initialPrompt + "Le personnage que tu dois incarner est " + this.name + "." +
                 "Voici ça description :" + this.initialPrompt
         })
-    console.log("tableau-" + this.tableau)
+
         document.getElementById("tableau-" + this.tableau).appendChild(this.generateElement());
 
         this.container =  document.querySelector("#" + this.name);
@@ -129,7 +129,7 @@ export class Specimen {
 
             setTimeout(()=>{
                 messageElement.remove();
-            }, 3000);
+            }, 10000);
 
             //if(response.)
             if(this.isTalking)
@@ -197,6 +197,7 @@ export class Specimen {
             this.move(10,10)
             moveSpecimenFromObservatoryToTableau(this);
             this.stopTalking();
+            this.messagesContainer.innerHTML = "";
         }
 
         event.preventDefault()
