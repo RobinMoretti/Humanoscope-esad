@@ -205,6 +205,10 @@ li:not(.clicked):hover {
   pointer-events: initial !important;
 }
 
+.collectionCadre{
+  text-align: center;
+}
+
 .close-btn {
   margin-left: 10px;
   background: none;
