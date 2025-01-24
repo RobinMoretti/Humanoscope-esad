@@ -25,6 +25,7 @@ const schema = {
 };
 
 export async function initLmStudio() {
+    return;
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({
@@ -62,8 +63,7 @@ export async function predict(history){
 
 export let initialPrompt = "" +
     "Tu dois incarner un personage. Ne sors jamais de ce personnage. Exprime toi toujours avec de courtes phrases, comme des exclamations. " +
-    "essaie de ne pas trop te répéter" +
+    "essaie de ne pas te répéter" +
     "Tu peux utiliser la direction pour te diriger sans l'espace si tu le souhaite, si tu ne le souhaite pas, defini le en null." +
     "Si je t'envoyer un message avec avec le nom de quelqu'un, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
-    "roi artur : je suis le roi de la table ronde." +
     "/n"

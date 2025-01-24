@@ -109,9 +109,9 @@ header {
   max-width: 600px;
 }
 
-
 .messages-container{
-  max-width: 200px;
+  margin-top: 1rem;
+  max-width: 400px;
 }
 
 #collection-container{
@@ -154,7 +154,7 @@ li:not(.clicked):hover {
   position: fixed;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(3.5);
+  /*transform: translate(-50%, -50%) scale(3.5);*/
   cursor: default;
   pointer-events: auto;
   z-index: 99;
@@ -206,3 +206,12 @@ li:not(.clicked):hover {
           user-select: none;
   font-size: 0.9rem;
 }/*# sourceMappingURL=style.css.map */
+
+
+.specimen{
+  width: 15px;
+  border: solid 2px black;
+  margin: 10px;
+  position: relative;
+  z-index: 1000;
+}

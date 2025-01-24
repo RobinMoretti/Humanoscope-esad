@@ -1,7 +1,7 @@
 import {initialPrompt, initLmStudio, predict} from "./lmStudio.js";
 import {randomIntFromInterval} from "./helper.js";
 import interact from "interactjs";
-import {dragMoveListener} from "./draggable.js";
+import {moveElementToNewParent} from "./main.js";
 
 export class Specimen {
     constructor(name, tableau) {
@@ -9,8 +9,10 @@ export class Specimen {
         this.initialPrompt = "";
         this.isTalking = false;
         this.tableau = tableau;
+        this.container = null;
         this.messagesContainer = null;
         this.position = {x:0, y:0};
+        this.positionInTableau = {x:0, y:0};
         this.chatHistory = [
             //{ role: "system", content: "Answer the following questions." },
             //{ role: "user", content: "What is the meaning of life?" },
@@ -22,37 +24,22 @@ export class Specimen {
     }
 
     init(){
+        console.log("init specimen")
         this.chatHistory.push({
             role:"user",
             content: initialPrompt + "Le personnage que tu dois incarner est " + this.name + "." +
                 "Voici ça description :" + this.initialPrompt
         })
 
-        document.getElementById("").appendChild(this.generateElement());
+        document.getElementById("tableau-" + this.tableau).appendChild(this.generateElement());
+
+        this.container =  document.querySelector("#" + this.name);
         this.messagesContainer = document.querySelector("#" + this.name + " .messages-container");
 
         interact("#" + this.name).draggable({
             inertia: true,
-            //   modifiers: [
-            //     interact.modifiers.restrictRect({
-            //       restriction: document.body,
-            //       elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
-            //       endOnly: true,
-            //     }),
-            //   ],
             listeners: {
-                start(event) {
-                    const target = event.target;
-                    const rect = target.getBoundingClientRect();
-                    const parentRect = target.parentNode.getBoundingClientRect();
-
-                    const x = rect.left - parentRect.left;
-                    const y = rect.top - parentRect.top;
-                    target.setAttribute("data-x", x);
-                    target.setAttribute("data-y", y);
-                    target.style.zIndex = 999;
-                },
-                move: dragMoveListener,
+                move: this.drag.bind(this),
                 end(event) {
                     const target = event.target;
                     const parentZIndex = parseInt(
@@ -61,8 +48,10 @@ export class Specimen {
                     target.style.zIndex = parentZIndex + 1;
                 },
             },
-        });
-        console.log("this.messagesContainer", this.messagesContainer)
+        })
+        .on('tap', function (event) {
+            this.tap(event);
+        }.bind(this));
     }
 
     async talk(){
@@ -87,10 +76,9 @@ export class Specimen {
                 messageElement.remove();
             }, 3000);
 
-            console.log(response.actions.move)
             //if(response.)
             this.talk();
-        }, randomIntFromInterval(5000, 5000))
+        }, randomIntFromInterval(1000, 2000))
     }
 
     startTalking(){
@@ -103,10 +91,13 @@ export class Specimen {
     }
 
     hearSomeoneElse(messageFromSomeoneElse, someoneElseName){
+        console.log(someoneElseName + " : " + messageFromSomeoneElse)
         this.chatHistory.push({
             role: "user",
             content: someoneElseName + " : " + messageFromSomeoneElse
         });
+
+        console.log(this.chatHistory)
     }
 
     generateElement() {
@@ -117,8 +108,40 @@ export class Specimen {
         let messagesContainer = document.createElement("div");
         messagesContainer.classList.add("messages-container");
 
+        let name = document.createElement("div");
+        name.classList.add("name");
+        name.innerHTML = this.name;
+        divContainer.appendChild(name);
+
         divContainer.appendChild(messagesContainer);
 
         return divContainer;
+    }
+
+    move(targetPositionX, targetPositionY) {
+        this.position.y = targetPositionY;
+        this.position.x = targetPositionX;
+
+        this.container.style.transform = `translate(${this.position.x}px, ${this.position.y}px)`;
+    }
+
+    drag(event) {
+        const target = event.target;
+
+        this.position.y += event.dy;
+        this.position.x += event.dx;
+
+        this.container.style.transform = `translate(${this.position.x}px, ${this.position.y}px)`;
+    }
+
+    tap(event){
+        //get touched
+        // go back to collection
+        if(!this.container.parentNode.classList.contains("tableau")){
+            let tableau = document.querySelector("#tableau-" + this.tableau);
+            moveElementToNewParent(this.container, tableau)
+            this.move(10,10)
+        }
+        event.preventDefault()
     }
 }

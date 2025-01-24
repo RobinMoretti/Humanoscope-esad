@@ -20,6 +20,7 @@ async function initGame() {
     await initLmStudio();
     await loadAllSpecimens();
     observatory = new Observatory();
+
 }
 
 async function loadAllSpecimens() {
@@ -27,7 +28,7 @@ async function loadAllSpecimens() {
         console.log(specimen);
         let newSpecimen = new Specimen(specimen.name, specimen.tableau);
         specimens[specimen.name] = newSpecimen;
-        specimens[specimen.name].initialPrompt = await loadLocalTextFile("public/Specimens/Trump.txt");
+        specimens[specimen.name].initialPrompt = await loadLocalTextFile("public/Specimens/" + specimen.name + ".txt");
         specimens[specimen.name].init();
 
         // add or create a tableau in collection from specimen
@@ -44,7 +45,8 @@ async function loadAllSpecimens() {
 }
 
 document.getElementById("test-interaction").addEventListener("click", () => {
-    moveSpecimenFromTableauToObservatory(specimens["donald-trump"]);
+    //moveSpecimenFromTableauToObservatory(specimens["donald-trump"]);
+    specimens["donald-trump"].hearSomeoneElse("You missed me donald.", "Nancy Pelosi, your nemesis")
 })
 
 function moveSpecimenFromTableauToObservatory(specimen) {
@@ -101,6 +103,8 @@ function initHtml(){
             this.parentElement.classList.remove("clicked");
         });
     });
+
+    initDropZones();
 }
 
 function infoOpener() {
@@ -130,4 +134,40 @@ function collectionOpener() {
         ouvert.style.display = "none";
         fermé.style.display = "block";
     }
+}
+
+function initDropZones(){
+    interact('.dropzone').dropzone({
+        accept: '.specimen',
+        overlap: 0.75,
+        ondrop: function (event) {
+            moveElementToNewParent(event.relatedTarget, event.currentTarget)
+        },
+    })
+}
+
+export function moveElementToNewParent(element, newParent) {
+    // Get the current position of the element relative to the document
+    const rect = element.getBoundingClientRect();
+    const docX = rect.left + window.scrollX;
+    const docY = rect.top + window.scrollY;
+
+    // Append the element to the new parent
+    newParent.appendChild(element);
+
+    // Get the new parent's position relative to the document
+    const newParentRect = newParent.getBoundingClientRect();
+    const newParentX = newParentRect.left + window.scrollX;
+    const newParentY = newParentRect.top + window.scrollY;
+
+    // Calculate the new position relative to the new parent
+    const newX = docX - newParentX;
+    const newY = docY - newParentY;
+
+    // find the specimen with id
+    let specimen = specimens[element.id];
+    console.log()
+    specimen.move(newX, newY);
+    // Apply the translate transformation to maintain the same visual position
+    //element.style.transform = `translate(${newX}px, ${newY}px)`;
 }

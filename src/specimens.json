@@ -2,7 +2,7 @@
   "specimens": [
     {
         "name": "donald-trump",
-        "tableau": "Historical figure",
+        "tableau": "historical-figure",
         "path": "src/Specimens/Trump.txt"
     }
   ]
