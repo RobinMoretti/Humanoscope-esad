@@ -1,6 +1,14 @@
+@font-face {
+  font-family: JGS;
+  src: url(../jgs_Font.ttf);
+}
+
+* {
+  font-family: JGS;
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /*font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;*/
+  line-height: 1;
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -83,9 +91,6 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  color: white;
 }
 
 header {
@@ -218,4 +223,67 @@ li:not(.clicked):hover {
   margin: 10px;
   position: relative;
   z-index: 1000;
+}
+
+.name{
+  font-weight: bold;
+}
+
+.relationAugmente{
+  color: green;
+  font-style: italic;
+}
+
+.relationBaisse{
+  color: brown;
+  font-style: italic;
+}
+
+.texteHistorique {
+  position: fixed;
+  top: 120px;
+  right: 70px;
+  width: 325px;
+  height : 500px;
+
+  visibility: visible;
+  z-index: 3;
+}
+.texteHistorique p, .name, .relationAugmente, .relationBaisse{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+}
+.texteHistorique h2{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+#historique-ouvert{
+  position: fixed;
+  top: 50px;
+  right: 30px;
+  visibility: visible;
+  background-color: white;
+  z-index: 2;
+}
+
+#historique-ferme{
+  position: fixed;
+  bottom: 0px;
+  right: 50px;
+  visibility: visible;
+  background-color: white;
+  z-index: 1;
+}
+
+#close-button{
+  background-color: white;
+  border: none;
+  width: fit-content;
+  position: fixed;
+  top: 120px;
+  right: 50px;
+  padding: 0;
 }
