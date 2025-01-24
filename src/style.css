@@ -184,15 +184,27 @@ li:not(.clicked):hover {
   transform: translateY(-5vh);
 }
 
-.clicked {
+/* .clicked {
   position: fixed;
   top: 45%;
-  /* left: 50%; */
+  left: 45%;
   /*transform: translate(-50%, -50%) scale(3.5);*/
+  /* cursor: default;
+  pointer-events: auto;
+  z-index: 99;
+} */
+
+.clicked {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centre précisément l'élément */
   cursor: default;
   pointer-events: auto;
   z-index: 99;
 }
+
+
 .clicked .close-btn,
 .clicked .tableau {
   visibility: visible;
@@ -214,6 +226,7 @@ li:not(.clicked):hover {
 
 .collectionCadre{
   text-align: center;
+  margin: 0 auto; /* Réduit les effets de décalage */
 }
 
 .close-btn {
@@ -309,7 +322,7 @@ li:not(.clicked):hover {
 }/*# sourceMappingURL=style.css.map */
 
 
-.specimen{
+#historique .specimen{
   width: 300px;
   border: solid 2px transparent !important;
   margin: 10px;
@@ -318,6 +331,20 @@ li:not(.clicked):hover {
   z-index: 1000;
   display: flex;
   justify-content: center;
+  left: -145px;
+  bottom: 75px;
+}
+
+#fantastique .specimen{
+  width: 300px;
+  border: solid 2px transparent !important;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  bottom: 100px;
 }
 
 .specimen > .name{
