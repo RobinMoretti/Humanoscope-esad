@@ -98,8 +98,6 @@
     transform: translateY(-20px);
 }
 
-
-
 /***************************** CARNET D'OBSERVATION *******************************/
 .name{
     font-weight: bold;
@@ -153,3 +151,5 @@
     background-color: white;
     z-index: 1;
 }
+
+

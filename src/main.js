@@ -42,11 +42,6 @@ async function loadAllSpecimens() {
     }
 }
 
-document.getElementById("test-interaction").addEventListener("click", () => {
-    //moveSpecimenFromTableauToObservatory(specimens["donald-trump"]);
-    specimens["donald-trump"].hearSomeoneElse("You missed me donald.", "Nancy Pelosi, your nemesis")
-})
-
 function moveSpecimenFromTableauToObservatory(specimen) {
     observatory.specimens.push(specimen);
     collection.find(tableau => tableau.name === specimen["tableau"]).specimens.splice(specimen);

@@ -219,3 +219,18 @@ li:not(.clicked):hover {
   position: relative;
   z-index: 1000;
 }
+
+#dropzone .background{
+  pointer-events: none;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: -1;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  height: calc(100% - 2rem);
+}
+
+#dropzone .background #fond-bas{
+  position: absolute;
+  bottom: 0;
+}
