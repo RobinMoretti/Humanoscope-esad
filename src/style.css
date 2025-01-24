@@ -209,7 +209,7 @@ li:not(.clicked):hover {
   width: 100%;
   background-color: black;
   color: white;
-  z-index: 1000;
+  z-index: 2;
   overflow: hidden;
 }
 
