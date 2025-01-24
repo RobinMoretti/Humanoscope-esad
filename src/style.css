@@ -118,7 +118,7 @@ header {
   position: absolute;
   top: 1rem;
   margin-top: 1rem;
-  max-width: 400px;
+  max-width: 500px;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -281,12 +281,21 @@ li:not(.clicked):hover {
 
 
 .specimen{
-  width: 100px;
+  width: 300px;
   border: solid 2px black;
   margin: 10px;
+  padding: 5px;
   position: relative;
   z-index: 1000;
 }
+/* .specimen{
+  width: 100px;
+  border: solid 2px black;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+  z-index: 1000;
+} */
 
 #dropzone .background{
   pointer-events: none;
@@ -371,3 +380,4 @@ li:not(.clicked):hover {
   overflow: auto;
   height:400px;
 }
+

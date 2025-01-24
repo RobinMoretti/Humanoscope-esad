@@ -164,7 +164,7 @@ export class Specimen {
 
         let name = document.createElement("div");
         name.classList.add("name");
-        name.innerHTML = this.name;
+        name.innerHTML = "<span class='name' style='text-transform:uppercase;font-size:12px'>" + this.name.replace(/-/g, ' ') + "</span>";
         divContainer.appendChild(name);
 
         divContainer.appendChild(messagesContainer);
