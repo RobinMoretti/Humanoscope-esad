@@ -7,15 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Humanoscope</title>
 	<link rel="icon" href="bug.ico"/>
-	<link rel="stylesheet" type="text/css" href="/src/style.css"/>
 	<script type="module" src="/src/draggable.js"></script>
 </head>
 
 <body>
-    <header>
-        <ul>
-            <li id="historique" class="tableau-container">
-	            <div class="background">
+<header>
+	<ul>
+		<li id="historique" class="tableau-container">
+			<div class="background">
                     <pre id="collectionHistorique" class="item-menu">
 `____________________'
  \_______Historique_______/
@@ -23,11 +22,12 @@
 |                      |
 ,-----------------------,
                     </pre>
-                    <pre class="collectionCadre cadre-item-menu" style="display:none;">
+				<pre class="collectionCadre cadre-item-menu" style="display:none; background: white">
       _____
         ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
         #=================================================================#
-        +                                                              <button class="close_button" style="background-color: white; border: none; width: fit-content;">X</button> +
+        +                                                              <button class="close_button"
+                                                                               style="background-color: white; border: none; width: fit-content;">X</button> +
         ⎢                                                                 ⎢
         ⎢                                                                 ⎢
         *                                                                 *
@@ -56,15 +56,15 @@
         ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
       -------- 
                     </pre>
-	            </div>
-                <div class="tableau" id="tableau-historical-figure">
+			</div>
+			<div class="tableau" id="tableau-historical-figure">
 
-                </div>
-            </li>
+			</div>
+		</li>
 
-            <li id="fantastique" class="tableau-container">
-	            <div class="tableau dropzone" id="tableau-fantastique">
-		            <div class="background">
+		<li id="fantastique" class="tableau-container">
+			<div class="tableau dropzone" id="tableau-fantastique">
+				<div class="background">
                         <pre id="collectionHistorique" class="item-menu">
 (\_________.o.__________/)
 (_______Fantastique_______)
@@ -72,13 +72,15 @@
 |                        |
 \-----------------------/
                         </pre>
-		            </div>
+				</div>
 
-                    <pre class="collectionCadre collectionCadre" style="display:none;">
+				<pre class="collectionCadre collectionCadre" style="display:none; background: white">
       _____
         ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
         #=================================================================#
-        +                                                              <button id="close_button" style="background-color: white; border: none; width: fit-content;" onclick="collectionOpener()">X</button> +
+        +                                                              <button id="close_button"
+                                                                               style="background-color: white; border: none; width: fit-content;"
+                                                                               onclick="collectionOpener()">X</button> +
         ⎢                                                                 ⎢
         ⎢                                                                 ⎢
         *                                                                 *
@@ -108,45 +110,61 @@
       --------
                   </pre>
 
-	            </div>
-            </li>
-        </ul>
-    </header>
+			</div>
+		</li>
+	</ul>
+</header>
 
-    <div id="dropzone" class="dropzone">
-	    <div class="background">
+<div id="dropzone" class="dropzone">
+	<div class="background">
 		    <pre id="observatory-background">
 +------------------------------------------------------------------------------3================3------------------------------------------------------------------------------+
 |          /------------.........................                                     +---+                                     .........................------------\         |
 |    /-----                                                                                                                                                           -----\   |
 *	                            								                                                                                                               *
             </pre>
-		    <pre id="fond-bas">
+		<pre id="fond-bas">
 *                                                                                                                                                                              *
 |                                                                                                                                                                              |
 |                                                                                                                                                                              |
 |                                                                                                                                                                              |
 +-----------------------                                                                                                                                -----------------------+
             </pre>
-	    </div>
-    </div>
+	</div>
+
+	<!--<div class="specimen" id="donald-trump" style="transform: translate(126.5px, 476.717px); z-index: 1;">
+		<div class="name">
+			<span class="name" style="text-transform:uppercase;font-size:12px">donald trump</span>
+		</div>
+		<div class="messages-container">
+			<div>
+				Bel jeu ! Je suis Donald Trump, le plus grand président que les États-Unis aient jamais connu.
+				Croyez-moi, personne n'a fait autant    de choses incroyables que moi ! Maintenant, je vais aller dans la
+				direction... Washington D.C., pour rencontrer mes partisans et discuter de ma prochaine stratégie.
+			</div>
+			<div>
+				texte 2
+			</div>
+		</div>
+	</div>-->
+</div>
 
 
-    <pre id="historique-ferme">
+<pre id="historique-ferme">
         {====][ I ][====}
         {===============}
     </pre>
 
-    <div class="texteHistorique" id="texteHistorique" style="display:none;">
-        <button id="historique-close-button">X</button>
-        <h2>Carnet d'observation</h2>
-        <div>
-            <div id="message-container"></div>
-        </div>
+<div class="texteHistorique" id="texteHistorique" style="display:none;">
+	<button id="historique-close-button">X</button>
+	<h2>Carnet d'observation</h2>
+	<div>
+		<div id="message-container"></div>
+	</div>
 
-    </div>
+</div>
 
-    <pre id="historique-ouvert" style="display:none;">
+<pre id="historique-ouvert" style="display:none; pointer-events: none; background: white">
                         o
                        / \
 {===============================================}

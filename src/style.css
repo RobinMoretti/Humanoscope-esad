@@ -115,12 +115,26 @@ header {
 }
 
 .messages-container{
-  position: absolute;
-  top: 1rem;
+    position: absolute;
+    bottom: 4rem;
+    margin-top: 1rem;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-container div:nth-child(3){
+  opacity: 100%;
+}
+.messages-container div:nth-child(2){
+  opacity: 30%;
+}
+.messages-container div:nth-child(1){
+  opacity: 5%;
+}
+.messages-container div{
   margin-top: 1rem;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column-reverse;
+  opacity: 0;
 }
 
 #collection-container{
@@ -286,11 +300,19 @@ li:not(.clicked):hover {
 
 .specimen{
   width: 300px;
-  border: solid 2px black;
+  border: solid 2px transparent !important;
   margin: 10px;
   padding: 5px;
   position: relative;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.specimen > .name{
+  display: inline;
+  border: solid 2px black;
+  padding: 5px;
 }
 /* .specimen{
   width: 100px;
