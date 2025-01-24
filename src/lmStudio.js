@@ -59,6 +59,6 @@ export async function predict(history){
 export let initialPrompt = "" +
     "Tu dois incarner un personage. Ne sors jamais de ce personnage. Exprime toi toujours avec de courtes phrases, comme des exclamations. " +
     "essaie de ne pas te répéter" +
-    "Tu peux utiliser la direction pour te diriger sans l'espace si tu le souhaite, si tu ne le souhaite pas, defini le en null." +
-    "Si je t'envoyer un message avec avec le nom de quelqu'un, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
+    "Tu peux utiliser la direction pour te diriger dans l'espace si tu le souhaite, si tu ne le souhaite pas, defini le en null." +
+    "Si je t'envoyer un message avec un nom, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
     "/n"
