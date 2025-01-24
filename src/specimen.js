@@ -36,7 +36,7 @@ export class Specimen {
             content: initialPrompt + "Le personnage que tu dois incarner est " + this.name + "." +
                 "Voici ça description :" + this.initialPrompt
         })
-
+    console.log("tableau-" + this.tableau)
         document.getElementById("tableau-" + this.tableau).appendChild(this.generateElement());
 
         this.container =  document.querySelector("#" + this.name);
@@ -189,6 +189,7 @@ export class Specimen {
             moveElementToNewParent(this.container, tableau)
             this.move(10,10)
             moveSpecimenFromObservatoryToTableau(this);
+            this.stopTalking();
         }
 
         event.preventDefault()

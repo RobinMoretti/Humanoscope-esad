@@ -78,23 +78,27 @@ function initHtml(){
                 openItems.forEach((openItem) => {
                     openItem.classList.remove("clicked");
                 });
-                this.addEventListener(
+                /*this.addEventListener(
                     "transitionend",
                     () => {
                         this.classList.add("clicked");
                     },
                     {once: true}
-                );
+                );*/
             } else {
                 this.classList.add("clicked");
             }
         });
+
     });
 
-    document.querySelectorAll(".close-btn").forEach((button) => {
+    document.querySelectorAll(".collectionCadre .close_button").forEach((button) => {
         button.addEventListener("click", function (event) {
-            event.stopPropagation();
-            this.parentElement.classList.remove("clicked");
+            //event.stopPropagation();
+            for (let item of document.querySelectorAll(".clicked")) {
+                item.setAttribute("class", "tableau-container");
+                console.log(item);
+            }
         });
     });
 
@@ -105,7 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let ouvert = document.getElementById("historique-ouvert");
     let ferme = document.getElementById("historique-ferme"); // Vérifiez ce nom !
     let texte = document.getElementById("texteHistorique");
-    let closeButton = document.getElementById("close-button");
+    let closeButton = document.getElementsByClassName("close_button")[0];
+    /*let closeButton2 = document.getElementsByClassName("close_button")[1];*/
 
     function toggleHistorique() {
         console.log("toggleHistorique")
@@ -123,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ferme.addEventListener("click", toggleHistorique);
     ouvert.addEventListener("click", toggleHistorique);
     texte.addEventListener("click", toggleHistorique);
-    
+
     closeButton.addEventListener("click", () => {
         ouvert.style.setProperty("display", "none", "important");
         texte.style.setProperty("display", "none", "important");

@@ -173,6 +173,20 @@ li:not(.clicked):hover {
   visibility: visible;
 }
 
+.clicked .item-menu{
+  display: none;
+}
+.clicked .collectionCadre{
+  display: initial !important;
+  position: absolute;
+  left: -15rem;
+  top: -11rem;
+  pointer-events: none;
+}
+.clicked .close_button{
+  pointer-events: initial !important;
+}
+
 .close-btn {
   margin-left: 10px;
   background: none;
