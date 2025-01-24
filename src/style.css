@@ -124,6 +124,7 @@ header {
 }
 
 
+/*
 .messages-container > div:nth-child(6){
   opacity: 100%;
 }
@@ -142,6 +143,7 @@ header {
 .messages-container > div:nth-child(1){
   opacity: 10%;
 }
+*/
 
 .messages-container div{
   margin-top: 1rem;
