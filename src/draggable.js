@@ -1,49 +1,9 @@
 import interact from "interactjs";
 
-export function dragMoveListener(event) {
-  const target = event.target;
-  var x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
-  var y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
 
-  target.style.transform = `translate(${x}px, ${y}px)`;
-  target.setAttribute("data-x", x);
-  target.setAttribute("data-y", y);
 
-  console.log("data-x", x, "data-y", y);
-}
 
-interact(".draggable").draggable({
-  inertia: true,
-  //   modifiers: [
-  //     interact.modifiers.restrictRect({
-  //       restriction: document.body,
-  //       elementRect: { top: 0, left: 0, bottom: 1, right: 1 },
-  //       endOnly: true,
-  //     }),
-  //   ],
-  listeners: {
-    start(event) {
-      const target = event.target;
-      const rect = target.getBoundingClientRect();
-      const parentRect = target.parentNode.getBoundingClientRect();
-
-      const x = rect.left - parentRect.left;
-      const y = rect.top - parentRect.top;
-      target.setAttribute("data-x", x);
-      target.setAttribute("data-y", y);
-      target.style.zIndex = 999;
-    },
-    move: dragMoveListener,
-    end(event) {
-      const target = event.target;
-      const parentZIndex = parseInt(
-        window.getComputedStyle(event.target.parentNode).zIndex || 0
-      );
-      target.style.zIndex = parentZIndex + 1;
-    },
-  },
-});
-
+/*
 interact("#dropzone").dropzone({
   accept: ".draggable",
   overlap: 0.75,
@@ -124,3 +84,4 @@ interact(".clicked").dropzone({
     event.relatedTarget.classList.remove("canDrop");
   },
 });
+*/

@@ -1,3 +1,5 @@
+import {noLlmMode} from "./helper.js";
+
 let answerDiv = document.getElementById('answer');
 
 import { LMStudioClient } from "@lmstudio/sdk";
@@ -18,38 +20,32 @@ const schema = {
                 },
                 parameters: { type: "object" },
             },
-            //required: ["actions", "parameters"],
         },
     },
     required: ["message", "actions"],
 };
 
 export async function initLmStudio() {
+    if(noLlmMode) return;
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({
-        baseUrl: "ws://192.168.32.180:5678",
+        baseUrl: "ws://192.168.33.211:5678",
     });
 
     const loadedModels = await lmStudio.llm.listLoaded();
 
-    console.log("initLmStudio is initiating2.")
     if (loadedModels.length === 0) {
         throw new Error("No models loaded");
     }
 
     client = await lmStudio.llm.get({ identifier: loadedModels[0].identifier });
-    console.log("initLmStudio iniated.")
 }
 
-/// Create a text completion prediction
 export async function predict(history){
-    // Create a text completion prediction
     const prediction =  await client.respond(
         history,
         {
-            //contextOverflowPolicy: "stopAtLimit",
-            //maxPredictedTokens: 100,
             stopStrings: ["/n"],
             temperature: 0.7,
             structured: { type: "json", jsonSchema: schema },
@@ -62,8 +58,7 @@ export async function predict(history){
 
 export let initialPrompt = "" +
     "Tu dois incarner un personage. Ne sors jamais de ce personnage. Exprime toi toujours avec de courtes phrases, comme des exclamations. " +
-    "essaie de ne pas trop te répéter" +
-    "Tu peux utiliser la direction pour te diriger sans l'espace si tu le souhaite, si tu ne le souhaite pas, defini le en null." +
-    "Si je t'envoyer un message avec avec le nom de quelqu'un, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
-    "roi artur : je suis le roi de la table ronde." +
+    "essaie de ne pas te répéter" +
+    "Tu peux utiliser la direction pour te diriger dans l'espace si tu le souhaite, si tu ne le souhaite pas, defini le en null." +
+    "Si je t'envoyer un message avec un nom, prend en considértion que je joue aussi ce personnage. (exemple, nom : message)" +
     "/n"

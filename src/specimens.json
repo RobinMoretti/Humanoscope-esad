@@ -2,8 +2,48 @@
   "specimens": [
     {
         "name": "donald-trump",
-        "tableau": "Historical figure",
+        "tableau": "historical-figure",
         "path": "src/Specimens/Trump.txt"
+    },
+    {
+      "name": "alan-turing",
+      "tableau": "fantastique",
+      "path": "src/Specimens/alan-turing.txt"
+    },
+    {
+      "name": "c3po",
+      "tableau": "fantastique",
+      "path": "src/Specimens/c3po.txt"
+    },
+    {
+      "name": "cyclope",
+      "tableau": "fantastique",
+      "path": "src/Specimens/cyclope.txt"
+    },
+    {
+      "name": "poutine",
+      "tableau": "fantastique",
+      "path": "src/Specimens/poutine.txt"
+    },
+    {
+      "name": "gandhi",
+      "tableau": "fantastique",
+      "path": "src/Specimens/gandhi.txt"
+    },
+    {
+      "name": "jeanne",
+      "tableau": "fantastique",
+      "path": "src/Specimens/jeanne.txt"
+    },
+    {
+      "name": "jedusor",
+      "tableau": "fantastique",
+      "path": "src/Specimens/jedusor.txt"
+    },
+    {
+      "name": "cyclope",
+      "tableau": "fantastique",
+      "path": "src/Specimens/cyclope.txt"
     }
   ]
 }
