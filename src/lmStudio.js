@@ -1,3 +1,5 @@
+import {noLlmMode} from "./helper.js";
+
 let answerDiv = document.getElementById('answer');
 
 import { LMStudioClient } from "@lmstudio/sdk";
@@ -25,7 +27,7 @@ const schema = {
 };
 
 export async function initLmStudio() {
-    return;
+    if(noLlmMode) return;
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({

@@ -110,8 +110,12 @@ header {
 }
 
 .messages-container{
+  position: absolute;
+  top: 1rem;
   margin-top: 1rem;
   max-width: 400px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #collection-container{
@@ -209,7 +213,7 @@ li:not(.clicked):hover {
 
 
 .specimen{
-  width: 15px;
+  width: 100px;
   border: solid 2px black;
   margin: 10px;
   position: relative;

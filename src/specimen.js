@@ -1,7 +1,7 @@
 import {initialPrompt, initLmStudio, predict} from "./lmStudio.js";
-import {randomIntFromInterval} from "./helper.js";
+import {noLlmMode, randomIntFromInterval} from "./helper.js";
 import interact from "interactjs";
-import {moveElementToNewParent} from "./main.js";
+import {moveElementToNewParent, moveSpecimenFromObservatoryToTableau} from "./main.js";
 
 export class Specimen {
     constructor(name, tableau) {
@@ -13,6 +13,7 @@ export class Specimen {
         this.messagesContainer = null;
         this.position = {x:0, y:0};
         this.positionInTableau = {x:0, y:0};
+        this.canBeHearBy = [];
         this.chatHistory = [
             //{ role: "system", content: "Answer the following questions." },
             //{ role: "user", content: "What is the meaning of life?" },
@@ -58,10 +59,22 @@ export class Specimen {
         setTimeout(async ()=>{
             this.chatHistory.push({
                 role:"user",
-                content: "exprime toi avec une courte phrase, comme une exclamation. et tourne vers la gauche"
+                content: "exprime toi avec une courte phrase, comme une exclamation."
             })
 
-            let response = await predict(this.chatHistory);
+            let response;
+
+            if(noLlmMode) {
+                response = {
+                    message: "I am a chatbot. I am not able to talk.",
+                    actions: {
+                        move: "null",
+                    }
+                };
+            }
+            else{
+                response = await predict(this.chatHistory);
+            }
 
             this.chatHistory.push({
                 role: "system",
@@ -71,6 +84,7 @@ export class Specimen {
             let messageElement = document.createElement("div");
             messageElement.innerHTML = response.message;
             this.messagesContainer.appendChild(messageElement)
+            this.sendMessageToSpecimensWichCanHear(response.message);
 
             setTimeout(()=>{
                 messageElement.remove();
@@ -141,7 +155,15 @@ export class Specimen {
             let tableau = document.querySelector("#tableau-" + this.tableau);
             moveElementToNewParent(this.container, tableau)
             this.move(10,10)
+            moveSpecimenFromObservatoryToTableau(this);
         }
+
         event.preventDefault()
+    }
+
+    sendMessageToSpecimensWichCanHear(message){
+        for(let specimen of this.canBeHearBy) {
+            specimen.hearSomeoneElse(message, this.name);
+        }
     }
 }

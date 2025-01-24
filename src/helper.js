@@ -1,3 +1,5 @@
+export let noLlmMode = true;
+
 export async function loadLocalTextFile(filePath) {
     const response = await fetch(filePath);
     return await response.text();
@@ -6,3 +8,4 @@ export async function loadLocalTextFile(filePath) {
 export function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+

@@ -55,9 +55,10 @@ function moveSpecimenFromTableauToObservatory(specimen) {
     specimen.startTalking();
 }
 
-function moveSpecimenFromObservatoryToTableau(specimen) {
-    /*collection.push(specimen);
-    observatory.find(tableau => tableau.name === specimen.tableau).specimens.splice(specimen);*/
+export function moveSpecimenFromObservatoryToTableau(specimen) {
+    observatory.specimens.splice(specimen);
+    collection.find(tableau => tableau.name === specimen["tableau"]).specimens.push(specimen);
+    specimen.stopTalking();
 }
 
 /*interact(".dragDrop").draggable({
@@ -141,7 +142,10 @@ function initDropZones(){
         accept: '.specimen',
         overlap: 0.75,
         ondrop: function (event) {
-            moveElementToNewParent(event.relatedTarget, event.currentTarget)
+            if(event.relatedTarget.parentNode !== event.currentTarget) {
+                moveElementToNewParent(event.relatedTarget, event.currentTarget)
+                moveSpecimenFromTableauToObservatory(specimens[event.relatedTarget.id]);
+            }
         },
     })
 }

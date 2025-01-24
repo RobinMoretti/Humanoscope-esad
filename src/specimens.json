@@ -4,6 +4,11 @@
         "name": "donald-trump",
         "tableau": "historical-figure",
         "path": "src/Specimens/Trump.txt"
+    },
+    {
+      "name": "donald-trump-bis",
+      "tableau": "fantastique",
+      "path": "src/Specimens/Trump.txt"
     }
   ]
 }
