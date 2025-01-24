@@ -15,8 +15,7 @@
 
     <header>
         <ul>
-            <li id="historique">
-                <span>Historique</span>
+            <li id="historique" class="tableau-container">
                 <button class="close-btn">X</button>
                 <div class="tableau dropzone" id="tableau-historical-figure">
 	                <div class="background">
@@ -32,24 +31,23 @@
                 </div>
             </li>
 
-            <li id="fantastique"><span>fantastique</span>
+            <li id="fantastique" class="tableau-container">
                 <button class="close-btn">X</button>
-                <div class="tableau"></div>
 	            <div class="tableau dropzone" id="tableau-fantastique">
 		            <div class="background">
                         <pre id="collectionHistorique" onclick="collectionOpener()">
-`____________________'
+    `____________________'
  \_______Fantastique_______/
-|                      |
-|                      |
-,-----------------------,
+  |                      |
+  |                      |
+  ,-----------------------,
                         </pre>
 		            </div>
 
 	            </div>
             </li>
 
-            <li id="temp1"><span>temp1</span>
+         <!--   <li id="temp1">
                 <button class="close-btn">X</button>
                 <div class="tableau">
                 </div>
@@ -57,7 +55,7 @@
             <li id="temp2"><span>temp2</span>
                 <button class="close-btn">X</button>
                 <div class="tableau"></div>
-            </li>
+            </li>-->
         </ul>
     </header>
 
@@ -80,7 +78,74 @@
     </div>
 
 
+    <pre id="historique-ferme">
+        {====][ I ][====}
+        {===============}
+    </pre>
 
+    <div class="texteHistorique" id="texteHistorique" style="display:none;">
+        <button id="historique-close-button">X</button>
+        <h2>Carnet d'observation</h2>
+        <div>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : What the fuck !</p>
+            <p><span class="name">La Reine des Neiges</span> : I don't care what they're going to say</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+            <p><span class="name">La Reine des Neiges</span> : The cold never bothered me anyway.</p>
+            <p class="relationBaisse"><span class="name">Homme préhistorique</span> → La Reine des Neiges ⬇︎</p>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : What the fuck !</p>
+            <p><span class="name">La Reine des Neiges</span> : I don't care what they're going to say</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+            <p><span class="name">La Reine des Neiges</span> : The cold never bothered me anyway.</p>
+            <p class="relationBaisse"><span class="name">Homme préhistorique</span> → La Reine des Neiges ⬇︎</p>
+            <p><span class="name">Trump</span> : I don't like losers.</p>
+            <p class="relationAugmente"><span class="name">Reine des Neiges</span> → Trump ⬆︎</p>
+            <p><span class="name">Trump</span> : That's my people.</p>
+        </div>
+
+    </div>
+
+    <pre id="historique-ouvert" style="display:none;">
+                        o
+                       / \
+{===============================================}
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+⎢                                               ⎢
+{===============================================}
+    </pre>
 </body>
 
 </html>

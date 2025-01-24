@@ -101,32 +101,102 @@ function initHtml(){
     initDropZones();
 }
 
-function infoOpener() {
-    var ouvert = document.getElementById("historique_ouvert");
-    var fermé = document.getElementById("historique-ferme");
-    var texte = document.getElementById("texteHistorique");
+document.addEventListener("DOMContentLoaded", () => {
+    let ouvert = document.getElementById("historique-ouvert");
+    let ferme = document.getElementById("historique-ferme"); // Vérifiez ce nom !
+    let texte = document.getElementById("texteHistorique");
+    let closeButton = document.getElementById("close-button");
 
-    if (ouvert.style.display === "none" || ouvert.style.display === "") {
-        ouvert.style.display = "block";
-        texte.style.display = "block";  // Show texteHistorique
-        fermé.style.display = "none";
-    } else {
-        ouvert.style.display = "none";
-        texte.style.display = "none";  // Hide texteHistorique
-        fermé.style.display = "block";
+    function toggleHistorique() {
+        console.log("toggleHistorique")
+        if (ouvert.style.display === "none" || ouvert.style.display === "") {
+            ouvert.style.display = "block";
+            texte.style.display = "block";  
+            ferme.style.display = "none";
+        } else {
+            ouvert.style.display = "none";
+            texte.style.display = "none";  
+            ferme.style.display = "block";
+        }
     }
-}
+
+    ferme.addEventListener("click", toggleHistorique);
+    ouvert.addEventListener("click", toggleHistorique);
+    texte.addEventListener("click", toggleHistorique);
+    
+    closeButton.addEventListener("click", () => {
+        ouvert.style.setProperty("display", "none", "important");
+        texte.style.setProperty("display", "none", "important");
+        ferme.style.setProperty("display", "block", "important");
+    });
+});
+
+
+
+// document.getElementById("historique-ouvert").addEventListener("click", () => {
+//     if (ouvert.style.display === "none" || ouvert.style.display === "") {
+//         ouvert.style.display = "block";
+//         texte.style.display = "block";  // Show texteHistorique
+//         ferme.style.display = "none";
+//     } else {
+//         ouvert.style.display = "none";
+//         texte.style.display = "none";  // Hide texteHistorique
+//         ferme.style.display = "block";
+//     }
+// })
+
+// document.getElementById("historique-ferme").addEventListener("click", () => {
+//     if (ouvert.style.display === "none" || ouvert.style.display === "") {
+//         ouvert.style.display = "block";
+//         texte.style.display = "block";  // Show texteHistorique
+//         ferme.style.display = "none";
+//     } else {
+//         ouvert.style.display = "none";
+//         texte.style.display = "none";  // Hide texteHistorique
+//         ferme.style.display = "block";
+//     }
+// })
+
+// document.getElementById("texteHistorique").addEventListener("click", () => {
+//     if (ouvert.style.display === "none" || ouvert.style.display === "") {
+//         ouvert.style.display = "block";
+//         texte.style.display = "block";  // Show texteHistorique
+//         ferme.style.display = "none";
+//     } else {
+//         ouvert.style.display = "none";
+//         texte.style.display = "none";  // Hide texteHistorique
+//         ferme.style.display = "block";
+//     }
+// })
+
+// function infoOpener() {
+//     var ouvert = document.getElementById("historique-ouvert");
+//     var ferme = document.getElementById("historique-ferme");
+//     var texte = document.getElementById("texteHistorique");
+
+//     if (ouvert.style.display === "none" || ouvert.style.display === "") {
+//         ouvert.style.display = "block";
+//         texte.style.display = "block";  // Show texteHistorique
+//         ferme.style.display = "none";
+//     } else {
+//         ouvert.style.display = "none";
+//         texte.style.display = "none";  // Hide texteHistorique
+//         ferme.style.display = "block";
+//     }
+// }
+
+
 
 function collectionOpener() {
     var ouvert = document.getElementById("collectionCadre");
-    var fermé = document.getElementById("collectionHistorique");
+    var ferme = document.getElementById("collectionHistorique");
 
     if (ouvert.style.display === "none" || ouvert.style.display === "") {
         ouvert.style.display = "block";
-        fermé.style.display = "none";
+        ferme.style.display = "none";
     } else {
         ouvert.style.display = "none";
-        fermé.style.display = "block";
+        ferme.style.display = "block";
     }
 }
 
