@@ -94,6 +94,14 @@ export class Specimen {
             this.messagesContainer.appendChild(messageElement)
             this.sendMessageToSpecimensWichCanHear(response.message);
 
+
+            document.getElementById("message-container").innerHTML +=
+                "<span class='name' style='text-transform:uppercase;'>" + this.name.replace(/-/g, ' ') + "</span>" + " : " + response.message + "<br /><br />";
+            // Faire défiler automatiquement jusqu'au bas du container
+            var container = document.getElementById("message-container");
+            container.scrollTop = container.scrollHeight;
+            
+
             if(!this.container.parentNode.classList.contains("tableau")){
                 if(response.actions.move == "up"){
                     if(this.position.y - speed > speed) {

@@ -366,3 +366,8 @@ li:not(.clicked):hover {
   padding: 0;
   cursor: pointer;
 }
+
+.texteHistorique #message-container{
+  overflow: auto;
+  height:400px;
+}
