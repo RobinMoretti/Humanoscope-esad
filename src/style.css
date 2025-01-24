@@ -123,8 +123,15 @@ header {
     flex-direction: column;
 }
 
-.messages-container > div:nth-child(3){
-  opacity: 70%;
+
+.messages-container > div:nth-child(6){
+  opacity: 100%;
+}
+.messages-container > div:nth-child(5){
+  opacity: 90%;
+}
+.messages-container > div:nth-child(4){
+  opacity: 80%;
 }
 .messages-container > div:nth-child(3){
   opacity: 50%;
@@ -133,7 +140,7 @@ header {
   opacity: 30%;
 }
 .messages-container > div:nth-child(1){
-  opacity: 5%;
+  opacity: 10%;
 }
 
 .messages-container div{

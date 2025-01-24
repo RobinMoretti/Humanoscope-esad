@@ -4,7 +4,7 @@ import interact from "interactjs";
 import {moveElementToNewParent, moveSpecimenFromObservatoryToTableau} from "./main.js";
 
 let speed = 50;
-export let maxDistanceToBeHear = 400;
+export let maxDistanceToBeHear = 700;
 
 export class Specimen {
     constructor(name, tableau) {
@@ -129,7 +129,7 @@ export class Specimen {
 
             setTimeout(()=>{
                 messageElement.remove();
-            }, 10000);
+            }, 30000);
 
             //if(response.)
             if(this.isTalking)
@@ -162,9 +162,9 @@ export class Specimen {
         let messagesContainer = document.createElement("div");
         messagesContainer.classList.add("messages-container");
 
-        messagesContainer.appendChild(document.createElement("div"));
-        messagesContainer.appendChild(document.createElement("div"));
-        messagesContainer.appendChild(document.createElement("div"));
+        // messagesContainer.appendChild(document.createElement("div"));
+        // messagesContainer.appendChild(document.createElement("div"));
+        // messagesContainer.appendChild(document.createElement("div"));
 
         let name = document.createElement("div");
         name.classList.add("name");
