@@ -184,11 +184,6 @@ li:not(.clicked):hover {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-
-  background-color: transparent !important;
-  position: absolute;
-  top: -3rem;
-  right: 3rem;
 }
 
 .dropzone {
@@ -227,6 +222,47 @@ li:not(.clicked):hover {
      -moz-user-select: none;
           user-select: none;
   font-size: 0.9rem;
+}
+
+#fondHaut-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+}
+
+#fondHaut {
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+#fondBas-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 2;
+  overflow: hidden;
+}
+
+#fondBas {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: pre;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
 }/*# sourceMappingURL=style.css.map */
 
 
