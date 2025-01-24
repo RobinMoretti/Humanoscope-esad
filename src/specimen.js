@@ -88,11 +88,20 @@ export class Specimen {
                 content: response.message
             });
 
+            let allMessages = this.messagesContainer.querySelectorAll("div");
+            for (let i = 0; i < allMessages.length; i++) {
+                console.log(" allMessages[i].style.opacity",  allMessages[i].style.opacity)
+                allMessages[i].style.opacity = allMessages[i].style.opacity - 0.3;
+            }
+
             let messageElement = document.createElement("div");
             messageElement.innerHTML = response.message;
             this.messagesContainer.appendChild(messageElement)
-            this.sendMessageToSpecimensWichCanHear(response.message);
+            messageElement.style.opacity = 1;
 
+
+
+            this.sendMessageToSpecimensWichCanHear(response.message);
 
             document.getElementById("message-container").innerHTML +=
                 "<span class='name' style='text-transform:uppercase;'>" + this.name.replace(/-/g, ' ') + "</span>" + " : " + response.message + "<br /><br />";
