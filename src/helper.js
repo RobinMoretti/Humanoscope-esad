@@ -1,4 +1,4 @@
-export let noLlmMode = true;
+export let noLlmMode = false;
 
 export async function loadLocalTextFile(filePath) {
     const response = await fetch(filePath);

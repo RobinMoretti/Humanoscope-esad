@@ -6,9 +6,9 @@
         "path": "src/Specimens/Trump.txt"
     },
     {
-      "name": "donald-trump-bis",
+      "name": "alan-turing",
       "tableau": "fantastique",
-      "path": "src/Specimens/Trump.txt"
+      "path": "src/Specimens/alan-turing.txt"
     }
   ]
 }

@@ -20,7 +20,6 @@ const schema = {
                 },
                 parameters: { type: "object" },
             },
-            //required: ["actions", "parameters"],
         },
     },
     required: ["message", "actions"],
@@ -31,28 +30,22 @@ export async function initLmStudio() {
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({
-        baseUrl: "ws://192.168.32.180:5678",
+        baseUrl: "ws://192.168.33.211:5678",
     });
 
     const loadedModels = await lmStudio.llm.listLoaded();
 
-    console.log("initLmStudio is initiating2.")
     if (loadedModels.length === 0) {
         throw new Error("No models loaded");
     }
 
     client = await lmStudio.llm.get({ identifier: loadedModels[0].identifier });
-    console.log("initLmStudio iniated.")
 }
 
-/// Create a text completion prediction
 export async function predict(history){
-    // Create a text completion prediction
     const prediction =  await client.respond(
         history,
         {
-            //contextOverflowPolicy: "stopAtLimit",
-            //maxPredictedTokens: 100,
             stopStrings: ["/n"],
             temperature: 0.7,
             structured: { type: "json", jsonSchema: schema },

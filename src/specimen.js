@@ -26,6 +26,7 @@ export class Specimen {
 
     init(){
         console.log("init specimen")
+
         this.chatHistory.push({
             role:"user",
             content: initialPrompt + "Le personnage que tu dois incarner est " + this.name + "." +
