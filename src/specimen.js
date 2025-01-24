@@ -134,7 +134,7 @@ export class Specimen {
             //if(response.)
             if(this.isTalking)
                 this.talk();
-        }, randomIntFromInterval(1000, 2000))
+        }, randomIntFromInterval(1000, 4000))
     }
 
     startTalking(){
@@ -161,6 +161,10 @@ export class Specimen {
 
         let messagesContainer = document.createElement("div");
         messagesContainer.classList.add("messages-container");
+
+        messagesContainer.appendChild(document.createElement("div"));
+        messagesContainer.appendChild(document.createElement("div"));
+        messagesContainer.appendChild(document.createElement("div"));
 
         let name = document.createElement("div");
         name.classList.add("name");

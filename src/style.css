@@ -123,18 +123,22 @@ header {
     flex-direction: column;
 }
 
-.messages-container div:nth-child(3){
-  opacity: 100%;
+.messages-container > div:nth-child(3){
+  opacity: 70%;
 }
-.messages-container div:nth-child(2){
+.messages-container > div:nth-child(3){
+  opacity: 50%;
+}
+.messages-container > div:nth-child(2){
   opacity: 30%;
 }
-.messages-container div:nth-child(1){
+.messages-container > div:nth-child(1){
   opacity: 5%;
 }
+
 .messages-container div{
   margin-top: 1rem;
-  opacity: 0;
+  opacity: 1;
 }
 
 #collection-container{
