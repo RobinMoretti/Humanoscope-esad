@@ -14,48 +14,146 @@
 <header>
 	<ul>
 		<li id="historique" class="tableau-container">
-			<div class="background">
+            <div class="tableau" id="tableau-historical-figure">
+                <div class="background">
                     <pre id="collectionHistorique" class="item-menu">
-`____________________'
- \_______Historique_______/
-|                      |
-|                      |
-,-----------------------,
+      `____________________'
+    \_______Historique_______/
+     |                      |
+     |         ìní          |
+    ,------------------------,
                     </pre>
+                    <pre class="collectionCadre cadre-item-menu" style="display:none; background: white">
+    ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
+    #=================================================================#
+    +                                                           <button class="close_button" style="background-color: white; border: none; width: fit-content;">X</button> +
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    *                                                                 *
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    *                                                                 *
+    ⎢                                                                 ⎢
+    ⎢                                                                 ⎢
+    +                                                                 +
+    #=================================================================#
+    ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
+    -------- 
+                    </pre>
+                </div>
+			</div>
+		</li>
+
+		<li id="fantastique" class="tableau-container">
+			<div class="tableau dropzone" id="tableau-fantastique">
+				<div class="background">
+                    <pre id="collectionHistorique" class="item-menu">
+(\_________.o.__________/)
+(______Fantastique_______)
+{                        }
+|          'O'           |
+\------------------------/
+                    </pre>
+                    <pre class="collectionCadre cadre-item-menu" style="display:none; background: white">
+                        ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
+                        #=================================================================#
+                        +                                                           <button id="close_button" style="background-color: white; border: none; width: fit-content;" onclick="collectionOpener()">X</button> +
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        *                                                                 *
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        *                                                                 *
+                        ⎢                                                                 ⎢
+                        ⎢                                                                 ⎢
+                        +                                                                 +
+                        #=================================================================#
+                        ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
+                        --------
+                    </pre>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+
+
+
+
+
+
+    <!-- <ul>
+		<li id="historique" class="tableau-container">
+			<div class="background">
+                <pre id="collectionHistorique" class="item-menu">
+  `____________________'
+\_______Historique_______/
+ |                      |
+ |         ìní          |
+,------------------------,
+                </pre>
 				<pre class="collectionCadre cadre-item-menu" style="display:none; background: white">
-      _____
-        ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
-        #=================================================================#
-        +                                                              <button class="close_button"
-                                                                               style="background-color: white; border: none; width: fit-content;">X</button> +
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        *                                                                 *
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        *                                                                 *
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        +                                                                 +
-        #=================================================================#
-        ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
-      -------- 
-                    </pre>
+⎢ - - - - - :::::::::::::::::: - - - - - ⎢
+#=================================================================#
++                                                           <button class="close_button" style="background-color: white; border: none; width: fit-content;">X</button> +
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+*                                                                 *
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+*                                                                 *
+⎢                                                                 ⎢
+⎢                                                                 ⎢
++                                                                 +
+#=================================================================#
+⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
+-------- 
+                </pre>
 			</div>
 			<div class="tableau" id="tableau-historical-figure">
 
@@ -65,70 +163,67 @@
 		<li id="fantastique" class="tableau-container">
 			<div class="tableau dropzone" id="tableau-fantastique">
 				<div class="background">
-                        <pre id="collectionHistorique" class="item-menu">
+                    <pre id="collectionHistorique" class="item-menu">
 (\_________.o.__________/)
-(_______Fantastique_______)
+(______Fantastique_______)
 {                        }
-|                        |
-\-----------------------/
-                        </pre>
+|          'O'           |
+\------------------------/
+                    </pre>
 				</div>
 
-				<pre class="collectionCadre collectionCadre" style="display:none; background: white">
-      _____
-        ⎢ - - - - - :::::::::::::::::: - - - - - ⎢
-        #=================================================================#
-        +                                                              <button id="close_button"
-                                                                               style="background-color: white; border: none; width: fit-content;"
-                                                                               onclick="collectionOpener()">X</button> +
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        *                                                                 *
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        *                                                                 *
-        ⎢                                                                 ⎢
-        ⎢                                                                 ⎢
-        +                                                                 +
-        #=================================================================#
-        ⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
-      --------
+				<pre class="collectionCadre cadre-item-menu" style="display:none; background: white">
+⎢ - - - - - :::::::::::::::::: - - - - - ⎢
+#=================================================================#
++                                                           <button id="close_button" style="background-color: white; border: none; width: fit-content;" onclick="collectionOpener()">X</button> +
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+*                                                                 *
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+⎢                                                                 ⎢
+*                                                                 *
+⎢                                                                 ⎢
+⎢                                                                 ⎢
++                                                                 +
+#=================================================================#
+⎢- - - - - - - - - - - - :::::::::::::::::: - - - - - - - - - - - -⎢
+--------
                   </pre>
 
 			</div>
 		</li>
-	</ul>
+	</ul> -->
 </header>
 
 <div id="dropzone" class="dropzone">
 	<div class="background">
 		    <pre id="observatory-background">
-+------------------------------------------------------------------------------3================3------------------------------------------------------------------------------+
-|          /------------.........................                                     +---+                                     .........................------------\         |
-|    /-----                                                                                                                                                           -----\   |
-*	                            								                                                                                                               *
++-----------------------------------------------------------------------------{================}------------------------------------------------------------------------------+
+|          /------------.........................                                    +---+                                     .........................------------\         |
+|    /-----                                                                                                                                                          -----\   |
+*	                            							                                                                                                               *
             </pre>
-		<pre id="fond-bas">
-*                                                                                                                                                                              *
-|                                                                                                                                                                              |
-|                                                                                                                                                                              |
-|                                                                                                                                                                              |
-+-----------------------                                                                                                                                -----------------------+
+		    <pre id="fond-bas">
+*                                                                                                                                                                             *
+|                                                                                                                                                                             |
+|                                                                                                                                                                             |
+|                                                                                                                                                                             |
++-----------------------                                                                                                                               -----------------------+
             </pre>
 	</div>
 

@@ -326,16 +326,20 @@ li:not(.clicked):hover {
 #dropzone .background{
   pointer-events: none;
   position: absolute;
-  left: 0; top: 0;
+  left: 1rem;
+  top: 0;
   z-index: -1;
-  margin-left: 2rem;
-  margin-top: 2rem;
   height: calc(100% - 2rem);
 }
-
+#dropzone .background #observatory-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 #dropzone .background #fond-bas{
   position: absolute;
-  bottom: 0;
+  bottom: -3rem;
+  left: 0;
 }
 .name{
   font-weight: bold;
@@ -383,8 +387,8 @@ li:not(.clicked):hover {
 
 #historique-ferme{
   position: fixed;
-  bottom: 0px;
-  right: 50px;
+  bottom: 1rem;
+  right: 4rem;
   visibility: visible;
   background-color: white;
   z-index: 1000;
