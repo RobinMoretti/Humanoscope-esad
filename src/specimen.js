@@ -3,6 +3,9 @@ import {noLlmMode, randomIntFromInterval} from "./helper.js";
 import interact from "interactjs";
 import {moveElementToNewParent, moveSpecimenFromObservatoryToTableau} from "./main.js";
 
+let speed = 50;
+export let maxDistanceToBeHear = 400;
+
 export class Specimen {
     constructor(name, tableau) {
         this.name = name;
@@ -14,6 +17,7 @@ export class Specimen {
         this.position = {x:0, y:0};
         this.positionInTableau = {x:0, y:0};
         this.canBeHearBy = [];
+        this.otherSpecimensSituation = "";
         this.chatHistory = [
             //{ role: "system", content: "Answer the following questions." },
             //{ role: "user", content: "What is the meaning of life?" },
@@ -57,10 +61,13 @@ export class Specimen {
     }
 
     async talk(){
+
+        if(!this.isTalking) return;
+
         setTimeout(async ()=>{
             this.chatHistory.push({
                 role:"user",
-                content: "exprime toi avec une courte phrase, comme une exclamation."
+                content: "Voici la situation : " + this.otherSpecimensSituation + ". Dis quelque chose et choisis une direction."
             })
 
             let response;
@@ -87,23 +94,29 @@ export class Specimen {
             this.messagesContainer.appendChild(messageElement)
             this.sendMessageToSpecimensWichCanHear(response.message);
 
-            console.log(response.actions.move)
-
-            if(response.actions.move === "up"){
-                if(this.position.y - 10 > 10) {
-                    this.move(this.position.x, this.position.y - 10);
+            if(!this.container.parentNode.classList.contains("tableau")){
+                if(response.actions.move == "up"){
+                    if(this.position.y - speed > speed) {
+                        this.move(this.position.x, this.position.y - speed);
+                    }
                 }
-            }
 
-            if(response.actions.move === "down"){
-                if(this.position.y + 10 < window.innerHeight - 100) {
-                    this.move(this.position.x, this.position.y + 10);
+                if(response.actions.move == "down"){
+                    if(this.position.y + speed < window.innerHeight - speed) {
+                        this.move(this.position.x, this.position.y + speed);
+                    }
                 }
-            }
 
-            if(response.actions.move === "left"){
-                if(this.position.x - 10 > 10) {
-                    this.move(this.position.x - 10, this.position.y);
+                if(response.actions.move == "left"){
+                    if(this.position.x - speed > speed) {
+                        this.move(this.position.x - speed, this.position.y);
+                    }
+                }
+
+                if(response.actions.move == "right"){
+                    if(this.position.x + speed < window.innerWidth - speed) {
+                        this.move(this.position.x + speed, this.position.y);
+                    }
                 }
             }
 
@@ -112,11 +125,13 @@ export class Specimen {
             }, 3000);
 
             //if(response.)
-            this.talk();
+            if(this.isTalking)
+                this.talk();
         }, randomIntFromInterval(1000, 2000))
     }
 
     startTalking(){
+        console.log("startTalking")
         this.isTalking = true;
         this.talk()
     }
@@ -126,13 +141,10 @@ export class Specimen {
     }
 
     hearSomeoneElse(messageFromSomeoneElse, someoneElseName){
-        console.log(someoneElseName + " : " + messageFromSomeoneElse)
         this.chatHistory.push({
             role: "user",
             content: someoneElseName + " : " + messageFromSomeoneElse
         });
-
-        console.log(this.chatHistory)
     }
 
     generateElement() {

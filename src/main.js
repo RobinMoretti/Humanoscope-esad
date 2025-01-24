@@ -16,22 +16,17 @@ initGame();
 
 async function initGame() {
     initHtml();
-
     await initLmStudio();
     await loadAllSpecimens();
     observatory = new Observatory();
-
 }
 
 async function loadAllSpecimens() {
     for (let specimen of specimensFiles.specimens) {
-        console.log(specimen);
         let newSpecimen = new Specimen(specimen.name, specimen.tableau);
 
         specimens[specimen.name] = newSpecimen;
         specimens[specimen.name].initialPrompt = await loadLocalTextFile("./public/Specimens/" + specimen.name + ".txt");
-        console.log("./public/Specimens/" + specimen.name + ".txt")
-        console.log(specimens[specimen.name].initialPrompt)
         specimens[specimen.name].init();
 
         // add or create a tableau in collection from specimen
