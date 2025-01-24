@@ -1,6 +1,8 @@
 # HUMANOSCOPE
 
 ## Overview
+Projet réalisé durant un workshop inter école de l'ESAD Orléans du 21 u 24 janvier 2025. 
+
 L’Humanoscope qui tire son nom de l’insectoscope est une expérience d'observation interactive où le joueur a la possibilité de choisir certains spécimens et d’étudier leur interactions. Ici les spécimens ne sont pas des insectes mais des personnages réels ou fictifs choisis en fonction de leur identité et de leurs style potentiel d’interaction. L’objectif était d’utiliser une IA pour incarner ces spécimens à l’aide des connaissances/prompts qu’on lui aura fournis et de reproduire certaines interactions variées, simulant ainsi une approche scientifique inspirée de l’entomologie.
 
 Ce projet trouve son origine dans de nombreuses références comme Totally accurate battle simulator pour son gameplay, candy box et A Dark Room pour leur progression minimaliste et narrative ou encore les œuvres d’Adel Faure pour leurs aspects esthétique.
