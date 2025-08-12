@@ -30,7 +30,7 @@ export async function initLmStudio() {
     console.log("initLmStudio is initiating.")
 
     lmStudio = new LMStudioClient({
-        baseUrl: "ws://192.168.33.211:5678",
+        baseUrl: "ws://192.168.33.137:1234",
     });
 
     const loadedModels = await lmStudio.llm.listLoaded();

@@ -11,7 +11,7 @@ Ce projet trouve son origine dans de nombreuses références comme Totally accur
 - Alice Massart - insta/@alima_crea
 - Julie Merlet - insta @_julie_mrlt_
 - Robin Moretti - [robinmoretti.eu](https://robinmoretti.eu)
-- Thi Thuy Ha Nguyen
+- Thi Thuy Ha Nguyen - insta/@xangunee
 - Lita Shin
 
 Documentation du process ici: https://docs.google.com/document/d/14gWOk9mozGUrZiBvhAXIp4UmNpcvh5Hr-I1jba5JWTg/edit?usp=sharing
